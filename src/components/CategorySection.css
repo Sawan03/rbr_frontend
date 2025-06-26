@@ -1,0 +1,88 @@
+.category-wrapper {
+  padding: 40px 20px;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.category-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Flex row to allow wrapping and responsive layout */
+.category-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Image and garment cards */
+.category-image,
+.garment-card {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 3 / 4.2;
+  border-radius: 20px;
+  flex: 1 1 100%;
+  object-fit: cover;
+}
+
+/* Garment card specific styles */
+.garment-card {
+  background-color: #ffe5ea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.garment-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.garment-label {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+}
+
+.garment-arrow {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Responsive behavior */
+@media (min-width: 480px) {
+  .category-image,
+  .garment-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (min-width: 768px) {
+  .category-image,
+  .garment-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-image,
+  .garment-card {
+    flex: 1 1 calc(25% - 20px);
+  }
+}

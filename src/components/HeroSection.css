@@ -1,0 +1,204 @@
+/* Font and base setup */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-wrapper {
+  background-color: #f2f4fb;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
+}
+
+.nav-left a,
+.nav-right i {
+  margin: 0 15px;
+  color: #111;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 3px;
+  flex-wrap: wrap;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Sale Banner */
+.sale-banner {
+  background: linear-gradient(to right, #6a00ff, #9900ff);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.sale-banner .code {
+  color: #ffe600;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+  flex-wrap: wrap;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.hero-left {
+  padding-right: 20px;
+}
+
+.hero-left h1 {
+  font-size: 52px;
+  color: #2e2e2e;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-left p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-group .btn-shop,
+.btn-group .btn-explore {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-group .btn-shop {
+  background-color: #8723d1;
+  color: white;
+  border: none;
+}
+
+.btn-group .btn-explore {
+  background-color: transparent;
+  color: #8723d1;
+  border: 2px solid #8723d1;
+}
+
+/* Hero Image */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ============================
+   Responsive Media Queries
+   ============================ */
+
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 40px 40px;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-left {
+    padding: 0;
+  }
+
+  .hero-left h1 {
+    font-size: 42px;
+  }
+
+  .hero-left p {
+    font-size: 15px;
+  }
+
+  .navbar {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .nav-left a,
+  .nav-right i {
+    font-size: 13px;
+  }
+
+  .sale-banner {
+    font-size: 13px;
+    padding: 8px;
+  }
+}

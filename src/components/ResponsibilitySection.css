@@ -1,0 +1,62 @@
+/* src/components/ResponsibilitySection.css */
+
+.responsibility-wrapper {
+  width: 100%;
+  min-height: 200px;
+  background-color: #e8e5fb;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.responsibility-box {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 10px;
+  background-color: transparent;
+}
+
+.responsibility-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.responsibility-author {
+  font-weight: 600;
+  color: #222;
+  font-size: 14px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .responsibility-wrapper {
+    padding: 30px 15px;
+  }
+
+  .responsibility-text {
+    font-size: 15px;
+  }
+
+  .responsibility-author {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsibility-wrapper {
+    padding: 25px 10px;
+  }
+
+  .responsibility-text {
+    font-size: 14px;
+  }
+
+  .responsibility-author {
+    font-size: 12px;
+  }
+}
