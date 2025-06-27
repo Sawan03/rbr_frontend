@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HeroSection.css';
+
 import footwear from '../assets/footwear.png';
 import searchIcon from '../assets/search.png';
 import userIcon from '../assets/user.png';
 import cartIcon from '../assets/cart.png';
 import rbrLogo from '../assets/RBR.png';
 
+const API_BASE_URL = 'https://rbr-z6sn.onrender.com/v';
+
 const HeroSection = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch mens category products
-    axios.get('http://localhost:5000/api/products?category=Mens')
-      .then(res => setProducts(res.data))
-      .catch(err => console.error('Error fetching products:', err));
+    axios
+      .get(`${API_BASE_URL}/api/products?category=Mens`)
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error('Error fetching products:', err));
   }, []);
 
   return (
@@ -65,8 +68,17 @@ const HeroSection = () => {
         </div>
       </main>
 
-      {/* Optional: Display fetched products for test/demo */}
-      
+      {/* Optional: Display fetched products */}
+      {/* 
+      <div className="product-preview">
+        {products.map((product) => (
+          <div key={product._id} className="product-card">
+            <img src={product.image} alt={product.name} />
+            <p>{product.name}</p>
+          </div>
+        ))}
+      </div>
+      */}
     </div>
   );
 };
