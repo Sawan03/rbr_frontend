@@ -40,7 +40,8 @@ const VendorDashboard = ({ userId, username, token, setMessage }) => {
 
   const fetchProducts = async () => {
     try {
-      const url = `http://localhost:5000/api/products?vendorId=${userId}`;
+      const url = `https://rbr-z6sn.onrender.com/v/api/products?vendorId=${userId}`;
+
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -54,7 +55,8 @@ const VendorDashboard = ({ userId, username, token, setMessage }) => {
 
   const fetchOrders = async () => {
     try {
-      const url = `http://localhost:5000/api/orders?vendorId=${userId}`;
+      const url = `https://rbr-z6sn.onrender.com/v/api/orders?vendorId=${userId}`;
+
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -98,13 +100,15 @@ const VendorDashboard = ({ userId, username, token, setMessage }) => {
 
       let res;
       if (editingProduct) {
-        res = await axios.put(`http://localhost:5000/api/products/${editingProduct._id}`, payload, {
+        res = await axios.put(`https://rbr-z6sn.onrender.com/v/api/products/${editingProduct._id}`, payload, {
+
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage('✅ Product updated successfully!');
         setEditingProduct(null);
       } else {
-        res = await axios.post('http://localhost:5000/api/products', payload, {
+        res = await axios.post('https://rbr-z6sn.onrender.com/v/api/products', payload, {
+
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage('✅ Product added successfully!');
@@ -146,7 +150,8 @@ const VendorDashboard = ({ userId, username, token, setMessage }) => {
   const handleDeleteProduct = async (productId) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${productId}`, {
+        await axios.delete(`https://rbr-z6sn.onrender.com/v/api/products/${productId}`, {
+{
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage('✅ Product deleted successfully!');
