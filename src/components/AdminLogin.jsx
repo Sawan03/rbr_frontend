@@ -3,6 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './AdminLogin.css';
 
+// ✅ Define base URL
+const API_BASE_URL = 'https://rbr-z6sn.onrender.com/v';
+
 const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +19,7 @@ const AdminLogin = () => {
     setSuccessMessage('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/admin-login', {
+      const res = await axios.post(`${API_BASE_URL}/api/admin-login`, {
         username,
         password,
       });
@@ -26,7 +29,6 @@ const AdminLogin = () => {
 
         setSuccessMessage('Login successful! Redirecting to dashboard...');
 
-        // Optional delay to let user read the message (1s delay)
         setTimeout(() => {
           navigate('/dashboard');
         }, 1000);
