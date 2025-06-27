@@ -41,7 +41,7 @@ const SuperadminDashboard = ({ userId, username, token, setMessage }) => {
 
   const fetchVendors = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/vendors', {
+    const res = await axios.get('https://rbr-z6sn.onrender.com/v/api/vendors', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setVendors(res.data);
@@ -61,7 +61,7 @@ const SuperadminDashboard = ({ userId, username, token, setMessage }) => {
   const fetchOrders = async () => {
     try {
       // Superadmin fetches all orders
-      const url = 'http://localhost:5000/api/orders';
+     const url = 'https://rbr-z6sn.onrender.com/v/api/orders';
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -107,7 +107,8 @@ const SuperadminDashboard = ({ userId, username, token, setMessage }) => {
         reviews: Number(product.reviews),
       };
 
-      await axios.post('http://localhost:5000/api/products', payload, {
+      await axios.post('https://rbr-z6sn.onrender.com/v/api/products', payload, {
+
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage('✅ Product added successfully!');
@@ -124,7 +125,8 @@ const SuperadminDashboard = ({ userId, username, token, setMessage }) => {
 
   const approveVendor = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/approve-vendor/${id}`, {}, {
+      await axios.put(`https://rbr-z6sn.onrender.com/v/api/approve-vendor/${id}`, {}, {
+
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage('✅ Vendor approved!');
@@ -137,7 +139,8 @@ const SuperadminDashboard = ({ userId, username, token, setMessage }) => {
 
   const rejectVendor = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/reject-vendor/${id}`, {
+      await axios.delete(`https://rbr-z6sn.onrender.com/v/api/reject-vendor/${id}`, {
+
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage('✅ Vendor removed!');
