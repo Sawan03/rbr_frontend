@@ -4,8 +4,9 @@ import './CategorySection.css';
 import sneakers from '../assets/sneaker.png';
 import sports from '../assets/Sport.png';
 import formals from '../assets/formal.png';
-import garmentIcon from '../assets/garment.png'; // Icon for garment card
+import garmentIcon from '../assets/garment.png';
 
+// ✅ Define category data as a constant outside the component
 const categories = [
   { name: 'Sneakers', img: sneakers, type: 'full' },
   { name: 'Sports', img: sports, type: 'full' },
@@ -18,17 +19,17 @@ const CategorySection = () => {
     <div className="category-wrapper">
       <h2 className="category-heading">EXPLORE OUR CATEGORIES</h2>
       <div className="category-row">
-        {categories.map((cat, index) => (
-          cat.type === 'full' ? (
+        {categories.map(({ name, img, type }, index) => (
+          type === 'full' ? (
             <img
               key={index}
-              src={cat.img}
-              alt={cat.name}
+              src={img}
+              alt={name}
               className="category-image"
             />
           ) : (
             <div className="garment-card" key={index}>
-              <img src={cat.img} alt={cat.name} className="garment-icon" />
+              <img src={img} alt={name} className="garment-icon" />
               <p className="garment-label">
                 EXPLORE<br />GARMENT<br />CATEGORIES
               </p>
