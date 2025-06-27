@@ -1,6 +1,7 @@
 // src/components/FooterSection.jsx
 import React from 'react';
 import './FooterSection.css';
+
 import menImg from '../assets/men.png';
 import womenImg from '../assets/women.png';
 import kidsImg from '../assets/kids.png';
@@ -23,10 +24,10 @@ const FooterSection = () => {
       <h2 className="footer-title">SHOP BY CATEGORY</h2>
 
       <div className="footer-category-grid">
-        {categories.map((cat, idx) => (
-          <div className="footer-category-card" key={idx}>
-            <img src={cat.image} alt={cat.title} className="footer-category-image" />
-            <h3 className="footer-category-label">{cat.title}</h3>
+        {categories.map(({ title, image }, index) => (
+          <div className="footer-category-card" key={index}>
+            <img src={image} alt={`${title} category`} className="footer-category-image" />
+            <h3 className="footer-category-label">{title}</h3>
           </div>
         ))}
       </div>
